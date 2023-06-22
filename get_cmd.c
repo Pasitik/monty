@@ -8,10 +8,10 @@ void get_cmd(void)
 	int i = 0;
 	instruction_t cmds[] = {
 		{"push", &push}, {"pop", &pop},
-	/*	{"pint", &pint}, {"swap", &swap},*/
+		{"pint", &pint}, {"swap", &swap},
 		{"nop", &nop}, {"add", &add},
-		/*{"pall", &pall}, {"sub", &sub},
-		{"div", &_div}, {"mul", &mul},
+		{"pall", &pall}, {"sub", &sub},
+		/*{"div", &_div}, {"mul", &mul},
 		{"rotl", &rotl}, {"rotr", &rotr},
 		{"stack", &stack}, {"queue", &queue},
 		{"pstr", &pstr}, {"pchar", &pchar},
