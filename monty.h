@@ -24,9 +24,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 
@@ -41,19 +41,19 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 
 /**
- * struct arg_s - hold variables
+ * struct args_ - hold variables
  * @stream: File that connects to the stream from file
  * @line: string which will be the line of text read from stream
- * @line_number: for tracking current line number
- * @tokens: used to store tokens from line
+ * @line_no: for tracking current line number
+ * @toks: used to store tokens from line
  * @instruction: a valid instruction from a line
- * @n_tokens; number of tokens created from line
+ * @n_toks: number of tokens created from line
  * @head: head/top of the stack (doubly linked lists of struct stack_s)
  * @stack_length: tracks the number of nodes in the stack
  * @stack: used to determine whether to use stack/queue data structure
@@ -64,8 +64,8 @@ typedef struct instruction_s
  */
 typedef struct args_
 {
-    FILE *stream;
-    char *line;
+	FILE *stream;
+	char *line;
 	unsigned int line_no;
 	char **toks;
 	int n_toks;
@@ -98,20 +98,20 @@ void queue(stack_t **stack, unsigned int line_number);
 
 void args_validation(int argc);
 void args_validation(int argc);
-void args_init();
+void args_init(void);
 void malloc_failed(void);
 void stream_get_failed(char *file);
 void getStream(char *file);
-void tokenization();
+void tokenization(void);
 void get_cmd(void);
 void invalid_cmd(void);
 void free_tokens(void);
 void close_stream(void);
 void run_cmd(void);
 int is_digit(char *s);
-void free_args();
-void free_all_args();
-void free_stack();
+void free_args(void);
+void free_all_args(void);
+void free_stack(void);
 void stack_node_del(void);
 
 #endif /* MONTY_H */
