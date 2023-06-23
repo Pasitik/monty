@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * invalid_instruction - Handles an unknown instruction error.
+ * get_cmd - Handles an unknown instruction error.
  */
 void get_cmd(void)
 {
@@ -11,11 +11,13 @@ void get_cmd(void)
 		{"pint", &pint}, {"swap", &swap},
 		{"nop", &nop}, {"add", &add},
 		{"pall", &pall}, {"sub", &sub},
-		/*{"div", &_div}, {"mul", &mul},
+/*
+		{"div", &_div}, {"mul", &mul},
 		{"rotl", &rotl}, {"rotr", &rotr},
 		{"stack", &stack}, {"queue", &queue},
 		{"pstr", &pstr}, {"pchar", &pchar},
-		{"mod", &mod},*/
+		{"mod", &mod},
+*/
 		{NULL, NULL}
 	};
 	if (args->n_toks == 0)

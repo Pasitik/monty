@@ -16,7 +16,7 @@ void push(stack_t **stack, unsigned int line_no)
 
 	*stack = malloc(sizeof(stack_t));
 	if (*stack == NULL)
-		malloc_failed(); 
+		malloc_failed();
 	(*stack)->n = (int) atoi(args->toks[1]);
 
 	if (args->head != NULL)

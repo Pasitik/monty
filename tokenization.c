@@ -22,7 +22,7 @@ void tokenization(void)
 	token = strtok(linecpy, delims);
 	while (token)
 	{
-		args->toks[count] = malloc(sizeof(char) * (strlen(token) +1));
+		args->toks[count] = malloc(sizeof(char) * (strlen(token) + 1));
 		if (args->toks[count] == NULL)
 			malloc_failed();
 		strcpy(args->toks[count], token);

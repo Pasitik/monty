@@ -1,11 +1,12 @@
 #include "monty.h"
 
 /**
- * malloc_failed - Handles the error when malloc fails to allocate memory.
+ * stream_get_failed - Handles the error wnen stream fails
+ * @file: file containing cmds
  */
 void stream_get_failed(char *file)
 {
-    dprintf(2, "Error: cant open file %s\n", file);
-    /* free_args(); */
-    exit(EXIT_FAILURE);
+	dprintf(2, "Error: cant open file %s\n", file);
+	free_args();
+	exit(EXIT_FAILURE);
 }
