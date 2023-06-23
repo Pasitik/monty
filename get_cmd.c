@@ -11,13 +11,11 @@ void get_cmd(void)
 		{"pint", &pint}, {"swap", &swap},
 		{"nop", &nop}, {"add", &add},
 		{"pall", &pall}, {"sub", &sub},
-/*
 		{"div", &_div}, {"mul", &mul},
 		{"rotl", &rotl}, {"rotr", &rotr},
 		{"stack", &stack}, {"queue", &queue},
 		{"pstr", &pstr}, {"pchar", &pchar},
 		{"mod", &mod},
-*/
 		{NULL, NULL}
 	};
 	if (args->n_toks == 0)
