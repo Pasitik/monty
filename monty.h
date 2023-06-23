@@ -109,9 +109,9 @@ void free_tokens(void);
 void close_stream(void);
 void run_cmd(void);
 int is_digit(char *s);
-void free_args(void);
+void free_args();
 void free_all_args(void);
-void free_stack(void);
+void free_stack(stack_t *head);
 void stack_node_del(void);
 
 #endif /* MONTY_H */

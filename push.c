@@ -17,13 +17,27 @@ void push(stack_t **stack, unsigned int line_no)
 	*stack = malloc(sizeof(stack_t));
 	if (*stack == NULL)
 		malloc_failed();
+	(*stack)->next = (*stack)->prev = NULL;
 	(*stack)->n = (int) atoi(args->toks[1]);
-
-	if (args->head != NULL)
+	if (args->head == NULL)
+		args->head = *stack;
+	else
 	{
-		(*stack)->next = args->head;
-		args->head->prev = *stack;
+		if (args->stack)
+		{
+			(*stack)->next = args->head;
+			args->head->prev = *stack;
+			args->head = *stack;
+		}
+		else
+		{
+			stack_t *temp = args->head;
+
+			while (temp->next)
+				temp = temp->next;
+			temp->next = *stack;
+			(*stack)->prev = temp;
+		}
 	}
-	args->head = *stack;
 	args->stack_length += 1;
 }
